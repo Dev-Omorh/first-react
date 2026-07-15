@@ -1,3 +1,10 @@
+/* .frm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+} */
+
 .form {
   background-color: #6233b9;
   padding: 1rem;
@@ -18,4 +25,6 @@
 .form input {
   padding: 0.5rem;
   background-color: #eadbfb;
+  border-radius: 10px;
+  color: #6233b9;
 }

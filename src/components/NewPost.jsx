@@ -1,19 +1,19 @@
 import classes from "./NewPost.module.css";
 
 function NewPost() {
-  document
-    .querySelectlor("textarea")
-    .addEventListener("change", function () {});
+  function changeBodyHandler(event) {
+    console.log(event.target.value);
+  }
 
   return (
-    <div>
+    <div className="frm">
       <form className={classes.form}>
         <p>
           <label htmlFor="body">Text</label>
-          <textarea id="body" required rows={3} />
+          <textarea id="body" required rows={3} onChange={changeBodyHandler} />
         </p>
         <p>
-          <label htmlFor="body">Your name </label>
+          <label htmlFor="name">Your name </label>
           <input type="text" id="name" required />
         </p>
       </form>
