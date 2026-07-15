@@ -30,6 +30,10 @@ body {
   min-height: 100vh;
 }
 
+main {
+  background-color: lightblue;
+}
+
 .post {
   background-color: lightblue;
 }

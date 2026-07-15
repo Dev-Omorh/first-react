@@ -1,6 +1,10 @@
 import classes from "./NewPost.module.css";
 
 function NewPost() {
+  document
+    .querySelectlor("textarea")
+    .addEventListener("change", function () {});
+
   return (
     <div>
       <form className={classes.form}>
