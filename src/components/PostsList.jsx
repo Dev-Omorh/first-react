@@ -5,13 +5,13 @@ import NewPost from "./NewPost";
 
 function PostsList() {
   const [enteredBody, setEnteredBody] = useState("");
-  const [author, setEnterBody] = useState('');
+  const [enteredAuthor, setEnteredAuthor] = useState("");
 
   function bodyChangeHandler(event) {
     setEnteredBody(event.target.value);
   }
   function authorChangeHandler(event) {
-    setEnteredBody(event.target.value);
+    setEnteredAuthor(event.target.value);
   }
 
   return (
@@ -21,8 +21,8 @@ function PostsList() {
         onAuthorChange={authorChangeHandler}
       />
       <ul className={classes.post}>
-        <Post author="Silian" body={enteredBody} />
-        <Post author="Kanuel" body={authorCh} />
+        <Post author={enteredAuthor} body={enteredBody} />
+        <Post author="Maxilian" body="Check out the full course" />
       </ul>
     </>
   );
