@@ -15,7 +15,7 @@ function NewPost(props) {
             type="text"
             id="name"
             required
-            onAuthorChange={props.onAuthorChange}
+            onChange={props.onAuthorChange}
           />
         </p>
       </form>

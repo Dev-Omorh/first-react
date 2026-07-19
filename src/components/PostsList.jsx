@@ -20,10 +20,10 @@ function PostsList() {
         onBodyChange={bodyChangeHandler}
         onAuthorChange={authorChangeHandler}
       />
-      <ul className={classes.post}>
+      <div className={classes.post}>
         <Post author={enteredAuthor} body={enteredBody} />
         <Post author="Maxilian" body="Check out the full course" />
-      </ul>
+      </div>
     </>
   );
 }
