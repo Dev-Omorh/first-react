@@ -12,11 +12,12 @@ function App() {
   function hideModalHandler() {
     setModalIsVisible(false);
   }
+
   return (
     <>
       <MainHeader />
       <main>
-        <PostsList isPosting={modalIsVisible} />
+        <PostsList />
       </main>
     </>
   );

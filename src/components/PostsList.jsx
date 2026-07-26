@@ -1,13 +1,12 @@
 import { useState } from "react";
 import Post from "./Post";
-import classes from "./Post.module.css";
+import classes from "./PostsList.module.css";
 import NewPost from "./NewPost";
 import Modal from "./Modal";
 
-function PostsList({ isPosting }) {
+function PostsList() {
   const [enteredBody, setEnteredBody] = useState("");
   const [enteredAuthor, setEnteredAuthor] = useState("");
-  const [modalVisible, setModalVisible] = useState(true);
 
   function bodyChangeHandler(event) {
     setEnteredBody(event.target.value);

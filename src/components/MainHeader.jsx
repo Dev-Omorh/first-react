@@ -1,6 +1,5 @@
-import { useState } from "react";
 import classes from "./MainHeader.module.css";
-import { MdPost, MdMessage } from "react-icon/md";
+import { MdPostAdd, MdMessage } from "react-icons/md";
 
 function MainHeader({ onCreatePost }) {
   return (
