@@ -18,6 +18,11 @@ function NewPost(props) {
             onChange={props.onAuthorChange}
           />
         </p>
+
+        <p className={classes.action}>
+          <button>Cancel</button>
+          <button>Submit</button>
+        </p>
       </form>
     </div>
   );
