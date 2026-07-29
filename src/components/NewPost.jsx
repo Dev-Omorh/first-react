@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import classes from "./NewPost.module.css";
 
-function NewPost({ onBodyChange, onAuthorChange, onCancel }) {
+function NewPost({onCancel }) {
 
   const [enteredBody, setEnteredBody] = useState("");
   const [enteredAuthor, setEnteredAuthor] = useState("");
@@ -14,17 +14,25 @@ function NewPost({ onBodyChange, onAuthorChange, onCancel }) {
     setEnteredAuthor(event.target.value);
   }
 
+  function submitHandler(event) {
+    event.preventDefault();
+    const postData = {
+      body: enteredBody,
+      author: enteredAuthor,
+    };
+  }
+
   return (
     <div className="frm">
       <form className={classes.form} onSubmit={}>
         <p>
           <label htmlFor="body">Text</label>
-          <textarea id="body" required rows={3} onChange={onBodyChange} />
+          <textarea id="body" required rows={3} onChange={bodyChangeHandler} />
         </p>
 
         <p>
           <label htmlFor="name">Your name </label>
-          <input type="text" id="name" required onChange={onAuthorChange} />
+          <input type="text" id="name" required onChange={authorChangeHandler} />
         </p>
 
         <p className={classes.action}>

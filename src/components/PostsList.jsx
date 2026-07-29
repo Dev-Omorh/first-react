@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Post from "./Post";
 import classes from "./PostsList.module.css";
 import NewPost from "./NewPost";
