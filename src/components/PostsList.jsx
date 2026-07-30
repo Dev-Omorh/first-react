@@ -5,14 +5,17 @@ import NewPost from "./NewPost";
 import Modal from "./Modal";
 
 function PostsList({ isPosting, onStopPosting }) {
-  // fetch("https//localhost:8080/posts")
-  //   .then((response) => response.json())
-  //   .then((data) => {
-  //     setPosts(data.posts);
-  //   });
   const [posts, setPosts] = useState([]);
-  
-  useEffect(() = {}, [])
+
+  useEffect(() => {
+    async function fetchPosts() {
+      const response = await fetch("https//localhost:8080/posts");
+      const resData = await response.json();
+      setPosts(resData.posts);
+    }
+
+    fetchPosts();
+  }, []);
 
   function addPostHandler(postData) {
     fetch("http://localhost:8080/posts", {
