@@ -5,9 +5,17 @@ import Modal from "./Modal";
 import { useState } from "react";
 
 function PostsList({ isPosting, onStopPosting }) {
+  fetch("https//localhost:8080/posts");
   const [posts, setPosts] = useState([]);
 
   function addPostHandler(postData) {
+    fetch("http://localhost:8080/posts", {
+      method: "POST",
+      body: JSON.stringify(postData),
+      header: {
+        "Content-Type": "application/json",
+      },
+    });
     setPosts((existingPosts) => [postData, ...existingPosts]);
   }
 
@@ -19,9 +27,20 @@ function PostsList({ isPosting, onStopPosting }) {
         </Modal>
       )}
 
-      <div className={classes.post}>
-        <Post author="Maxilian" body="Check out the full course" />
-      </div>
+      {posts.length > 0 && (
+        <ul className={classes.post}>
+          {posts.map((post) => (
+            <Post key={post.body} author={post.author} body={post.body} />
+          ))}
+        </ul>
+      )}
+
+      {posts.length === 0 && (
+        <div style={{ textAlign: "center", color: "white" }}>
+          <h2>There are no posts yet.</h2>
+          <p>Start adding some!</p>
+        </div>
+      )}
     </>
   );
 }
